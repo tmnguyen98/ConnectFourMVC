@@ -1,9 +1,8 @@
 package mvc;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class ConnectFourView extends JFrame {
 	
@@ -13,6 +12,9 @@ public class ConnectFourView extends JFrame {
 
         // Set the size of the GUI
         setSize(900, 750);
+        
+        // Set background of the GUI
+        setBackground(Color.DARK_GRAY);
         
         // Specify an action for the close button
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +29,7 @@ public class ConnectFourView extends JFrame {
 	private void buildBoard() {
 		
 		Board board = new Board();
-		this.setContentPane(board);
+		setContentPane(board);
 	}
 
 	public static void main(String[] args) {
