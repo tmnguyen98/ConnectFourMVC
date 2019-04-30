@@ -1,8 +1,10 @@
 package mvc;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class ConnectFourView extends JFrame {
 	
@@ -29,7 +31,11 @@ public class ConnectFourView extends JFrame {
 	private void buildBoard() {
 		
 		Board board = new Board();
-		setContentPane(board);
+		ButtonView buttons = new ButtonView();
+		SideButtons sideButtons = new SideButtons();
+		add(board, BorderLayout.CENTER);
+		add(buttons, BorderLayout.NORTH);
+		add(sideButtons, BorderLayout.SOUTH);
 	}
 
 	public static void main(String[] args) {

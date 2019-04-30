@@ -1,23 +1,50 @@
 package mvc;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Board extends JPanel {
-	private int spacing = 5;
+	private JPanel[][] grid = new JPanel[6][7];
+	protected int[][] Player = new int[6][7];
 	
-	public void paintComponent(Graphics g) {
-		g.setColor(Color.GRAY);
-		drawSquare(g);
+	public Board() {
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 7; j++) {
+				JPanel block = buildBlock();
+				grid[i][j] = block;
+			}
+		}
+		
+		setLayout(new GridLayout(6,7));
+		
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 7; j++) {
+				add(grid[i][j]);
+			}
+		}
+		
 	}
 
-	private void drawSquare(Graphics g) {
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 6; j++) {
-				g.fillRect(spacing+i*105+75, spacing+j*105+50, 105-2*spacing, 105-2*spacing);
-			}
+	private JPanel buildBlock() {
+		JPanel block = new JPanel();
+		block.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		block.setBackground(Color.DARK_GRAY);
+		//block.addActionListener(new BlockListener());
+		return block;
+	}
+	
+	private class BlockListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
 		}
 		
 	}
