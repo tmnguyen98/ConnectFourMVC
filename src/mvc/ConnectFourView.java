@@ -8,24 +8,35 @@ import javax.swing.JLabel;
 
 public class ConnectFourView extends JFrame {
 	
-	public ConnectFourView() {
+	ControllerInterface controller;
+	ModelInterface model;
+	JFrame view = new JFrame();
+
+	public ConnectFourView(ControllerInterface controller, ModelInterface model) {
+		this.controller = controller;
+		this.model = model;
+		//model.registerObserver((PlayerObserver) this);
+	}
+	
+	public void createView() {
+		
         // Set the title bar text
-        setTitle("Connect Four");
+        view.setTitle("Connect Four");
 
         // Set the size of the GUI
-        setSize(900, 750);
+        view.setSize(900, 750);
         
         // Set background of the GUI
-        setBackground(Color.DARK_GRAY);
+        view.setBackground(Color.DARK_GRAY);
         
         // Specify an action for the close button
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Build the panel and add it to the frame
         buildBoard();
 
         //Display the window
-        setVisible(true);
+        view.setVisible(true);
 	}
 	
 	private void buildBoard() {
@@ -33,12 +44,8 @@ public class ConnectFourView extends JFrame {
 		Board board = new Board();
 		ButtonView buttons = new ButtonView();
 		SideButtons sideButtons = new SideButtons();
-		add(board, BorderLayout.CENTER);
-		add(buttons, BorderLayout.NORTH);
-		add(sideButtons, BorderLayout.SOUTH);
-	}
-
-	public static void main(String[] args) {
-		new ConnectFourView();
+		view.add(board, BorderLayout.CENTER);
+		view.add(buttons, BorderLayout.NORTH);
+		view.add(sideButtons, BorderLayout.SOUTH);
 	}
 }

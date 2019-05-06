@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Board extends JPanel {
-	private JPanel[][] grid = new JPanel[6][7];
+	public static JPanel[][] grid = new JPanel[6][7];
 	protected int[][] Player = new int[6][7];
 	
 	public Board() {
@@ -36,16 +36,8 @@ public class Board extends JPanel {
 		JPanel block = new JPanel();
 		block.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		block.setBackground(Color.DARK_GRAY);
-		//block.addActionListener(new BlockListener());
 		return block;
 	}
 	
-	private class BlockListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-
-		}
-		
-	}
+	
 }
