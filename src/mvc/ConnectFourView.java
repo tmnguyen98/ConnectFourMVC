@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 public class ConnectFourView extends JFrame implements PlayerObserver{
 	
 	JButton[] buttongroup = new JButton[7];
-	int[] numClicking = new int[7];
+	static int[] numClicking = new int[7];
 	JPanel playButtonJPanel = new JPanel();
 	ControllerInterface controller;
 	ModelInterface model;
@@ -52,7 +52,7 @@ public class ConnectFourView extends JFrame implements PlayerObserver{
 		
 		Board board = new Board();
 		buildButtonGroup();
-		SideButtons sideButtons = new SideButtons();
+		SideButtons sideButtons = new SideButtons(this.controller);
 		view.add(board, BorderLayout.CENTER);
 		view.add(this.playButtonJPanel, BorderLayout.NORTH);
 		view.add(sideButtons, BorderLayout.SOUTH);

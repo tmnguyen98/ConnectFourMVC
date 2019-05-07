@@ -9,4 +9,5 @@ public interface ModelInterface {
 	int[] getPosition();
 	void setPlayerTurn(int turn);
 	int getPlayerTurn();
+	void reset();
 }

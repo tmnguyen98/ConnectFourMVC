@@ -25,4 +25,10 @@ public class ConnectFourController implements ControllerInterface {
 		model.setPlayerTurn(turn);
 		
 	}
+
+	@Override
+	public void reset() {
+		model.reset();
+		
+	}
 }

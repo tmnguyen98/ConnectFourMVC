@@ -79,5 +79,13 @@ public class ConnectFourModel implements ModelInterface {
 		return playerTurn;
 		
 	}
+
+	@Override
+	public void reset() {
+		player = new int[6][7];
+		playerPosition = new int[2];
+		playerTurn = 1;
+		ConnectFourView.numClicking = new int[7];
+	}
 	
 }
