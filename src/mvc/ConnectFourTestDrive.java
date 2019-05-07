@@ -6,4 +6,4 @@ public class ConnectFourTestDrive {
         ControllerInterface controller = new ConnectFourController(model);
     }
     
-}
+} 

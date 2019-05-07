@@ -10,7 +10,19 @@ public class ConnectFourController implements ControllerInterface {
         view.createView();
     }
     
-    public void setPlayer(int column, int row, int playerTurn) {
-    	model.setPlayer(column, row, playerTurn);
+    public void setPlayer(int row, int playerTurn) {
+    	model.setPlayer(row, playerTurn);
     }
+
+	@Override
+	public void setPosition(int row) {
+		model.setPosition(row);
+		
+	}
+
+	@Override
+	public void setPlayerTurn(int turn) {
+		model.setPlayerTurn(turn);
+		
+	}
 }
