@@ -1,3 +1,11 @@
+/**
+ * Tuan Nguyen
+ * CS 210
+ * 5/7/2019
+ * Lab 13
+ * SideButtons.java
+ */
+
 package mvc;
 
 import java.awt.Color;
@@ -7,6 +15,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * A sub class for the view class that have reset button and exit button
+ * @author tuan nguyen
+ *
+ */
 public class SideButtons extends JPanel {
 	JButton resetButton = new JButton("Reset");
 	JButton exitButton = new JButton("Exit");
@@ -20,6 +33,11 @@ public class SideButtons extends JPanel {
 		add(exitButton);
 	}
 	
+	/**
+	 * A sub class to implement the action of the exit button
+	 * @author tuan nguyen
+	 *
+	 */
 	private class exitButtonListener implements ActionListener {
 
 		@Override
@@ -30,6 +48,11 @@ public class SideButtons extends JPanel {
 		
 	}
 	
+	/**
+	 * A sub class to implement the action of the reset button
+	 * @author tuan nguyen
+	 *
+	 */
 	private class resetButtonListener implements ActionListener {
 
 		@Override
